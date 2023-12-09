@@ -16,6 +16,7 @@ import Avatar from './Avatar'
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
+  tags: ['autodocs'],
 }
 
 export default meta
