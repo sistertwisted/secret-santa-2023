@@ -22,9 +22,23 @@ export default meta
 
 type Story = StoryObj<typeof Input>
 
-export const Primary: Story = {
+export const Name: Story = {
   args: {
     type: 'text',
     placeholder: 'Name',
+  },
+}
+
+export const Email: Story = {
+  args: {
+    type: 'email',
+    placeholder: 'Email',
+  },
+}
+
+export const Password: Story = {
+  args: {
+    type: 'password',
+    placeholder: 'Password',
   },
 }

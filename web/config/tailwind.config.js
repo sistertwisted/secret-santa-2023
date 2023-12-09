@@ -15,6 +15,8 @@ module.exports = {
         nileBlue: '#243853' /* blue */,
         blackPearl: '#071126' /* navy blue */,
         pastelMagenta: '#ff9dbf' /* pink */,
+        vistaBlue: '#94d1b4' /* light green around the avatar */,
+        fireEngineRed: '#C52424' /* darker red */,
       },
       width: {
         21: '84px',
@@ -34,6 +36,9 @@ module.exports = {
         '4xl': '2.441rem',
         '5xl': '3.052rem',
         avatar: '32px',
+      },
+      backgroundImage: {
+        'auth-pattern': "url('/img/bg__auth.svg')",
       },
     },
     fontFamily: {

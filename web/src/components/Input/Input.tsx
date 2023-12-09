@@ -1,17 +1,26 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
+
+import Icon from '../Icon/Icon'
 
 type TProps = {
-  type: string
+  type: 'password' | 'text' | 'email'
   placeholder: string
 }
 
 const Input: FC<TProps> = ({ type, placeholder }) => {
+  const [showPassword, setShowPassword] = useState(false)
+
+  const handleShowPassword = () => setShowPassword((value) => !value)
+
   return (
-    <div className="relative mb-6">
-      <input type={type} className="sm:text-md peer block bg-white p-8" />
-      <p className="absolute left-8 top-6 font-handwriting text-3xl font-bold uppercase transition-all peer-focus:left-2 peer-focus:top-1 peer-focus:text-lg peer-active:left-2 peer-active:top-1 peer-active:text-lg">
-        {placeholder}
-      </p>
+    <div className="relative">
+      <label>{placeholder}</label>
+      <input type={showPassword ? 'text' : type} placeholder="" />
+      {type === 'password' && (
+        <div onClick={handleShowPassword} className="absolute right-9 top-9">
+          <Icon id={showPassword ? 'eyeOpened' : 'eyeClosed'} size={32} />
+        </div>
+      )}
     </div>
   )
 }
