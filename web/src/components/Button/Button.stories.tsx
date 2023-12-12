@@ -12,14 +12,18 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import BgAuth from './BgAuth'
+import Button from './Button'
 
-const meta: Meta<typeof BgAuth> = {
-  component: BgAuth,
+const meta: Meta<typeof Button> = {
+  component: Button,
 }
 
 export default meta
 
-type Story = StoryObj<typeof BgAuth>
+type Story = StoryObj<typeof Button>
 
-export const Primary: Story = {}
+export const SubmitButton: Story = {
+  args: {
+    children: 'submit',
+  },
+}

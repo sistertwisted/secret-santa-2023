@@ -5,9 +5,10 @@ import Icon from '../Icon/Icon'
 type TProps = {
   type: 'password' | 'text' | 'email'
   placeholder: string
+  onChange: (value) => void
 }
 
-const Input: FC<TProps> = ({ type, placeholder }) => {
+const Input: FC<TProps> = ({ type, placeholder, onChange }) => {
   const [showPassword, setShowPassword] = useState(false)
 
   const handleShowPassword = () => setShowPassword((value) => !value)
@@ -15,7 +16,12 @@ const Input: FC<TProps> = ({ type, placeholder }) => {
   return (
     <div className="relative">
       <label>{placeholder}</label>
-      <input type={showPassword ? 'text' : type} placeholder="" />
+      <input
+        type={showPassword ? 'text' : type}
+        placeholder=""
+        name={type}
+        onChange={(e) => onChange?.(e.target.value)}
+      />
       {type === 'password' && (
         <div onClick={handleShowPassword} className="absolute right-9 top-9">
           <Icon id={showPassword ? 'eyeOpened' : 'eyeClosed'} size={32} />
